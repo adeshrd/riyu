@@ -1,3 +1,34 @@
+window.onload = function() {
+
+
+    new TypeIt("#app", {
+        speed: 20,
+        loop: false,
+        afterComplete: async (instance) => {
+            new TypeIt("#que", {
+                strings: "I wanted to <span style=\"color: #27ae60;\">wish</span> you...",
+                speed: 150,
+                loop: false,
+            })
+                .go()
+        },
+    })
+        .type("Hi Riyu &#128075;")
+        .break()
+        .pause(500)
+        .type("Today is an amazing day!")
+        .go();
+
+
+/*        .deleteChars(10)
+        .typeString('<strong>JS</strong> plugin for a cool typewriter effect and ')
+        .typeString('<strong>only <span style="color: #27ae60;">5kb</span> Gzipped!</strong>')
+        .pauseFor(1000)*/
+
+}
+
+
+
 function startQuestions() {
     document.getElementById("questions").style.display = "block";
   }

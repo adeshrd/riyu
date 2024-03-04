@@ -1,3 +1,22 @@
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.oswald-app {
+     font-family: "Oswald", sans-serif;
+     font-optical-sizing: auto;
+     font-weight: 500;
+     font-style: normal;
+        font-size: 36px;
+}
+
+
 body {
     font-family: 'Inter', Arial, sans-serif;
     text-align: center;
