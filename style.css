@@ -216,3 +216,7 @@ body {
 .slide6 {
   background-image: url("Couple6.jpeg");
 }
+
+.btn {
+  cursor: pointer;
+}

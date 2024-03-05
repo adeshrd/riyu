@@ -24,6 +24,7 @@ var stringsTogether = [
 
 var finalChapter = function () {
     glideStarted = false
+
     $('.cake').hide()
     $('#partner').hide()
     $('#birthday-message').hide()
@@ -109,7 +110,9 @@ var wishBirthday = function () {
                                 $('#birthday-message').show()
                                 showConfetti();
                                 setTimeout(() => {
-                                    $('#more').fadeIn('slow');
+                                    confetti.clear();
+                                    $('#confetti-canvas').hide()
+                                    $('#more').show().on('click', finalChapter)
                                 }, 4000);
                             });
                         }
@@ -141,7 +144,7 @@ function showConfetti() {
         colors: ['#ff0000', '#00ff00', '#0000ff'],
     };
 
-    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
     /*setTimeout(() => {
         confetti.clear();
