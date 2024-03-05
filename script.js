@@ -15,7 +15,7 @@ window.onload = function () {
 started = false;
 
 var stringsTogether = [
-    "Our moments together...",
+    "Our moments...",
     "Our love...",
     "Our life...",
     "Our journey...",
