@@ -1,3 +1,64 @@
+body {
+   background-color: #fff;
+  -webkit-transition:background-color linear 5s;
+  -moz-transition:background-color linear 5s;
+  -o-transition:background-color linear 5s;
+  -ms-transition:background-color linear 5s;
+  transition:background-color linear 5s;
+  overflow-x:hidden;
+}
+
+audio {
+  display: none !important;
+}
+
+
+.container {
+  display: none;
+}
+
+
+.test {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'IndieFlower', Helvetica, serif;
+  color: #fff;
+  text-shadow: 4px 0px 5px #000;
+}
+
+.made-with-love {
+  text-shadow: 0 0 1px #41277C, 0 0 15px rgba(238, 238, 255, 0.85);
+  color: #eeeeef;
+  font-size: 20px;
+  display: none;
+  position: absolute;
+  width: 90%;
+  top: 80%;
+  bottom: auto;
+  right: auto;
+  text-align: center;
+
+  .made-by-heart {
+    fill: red;
+    position: relative;
+    top: 5px;
+    margin: 0 5px;
+    width: 25px;
+    animation: pulse 1s ease infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
 
 html,
 body {
@@ -49,7 +110,7 @@ body {
     top:0;
     left: 0;
     width: 100%;
-    z-index: -10;
+    z-index: 1;
   }
   
   button {
@@ -86,4 +147,27 @@ body {
       margin-top: 10px;
     }
   }
+.birthday-message {
+  font-family: 'Lato', Helvetica, serif;
+  width: 100%;
+  font-size: 50px;
+  display: none;
+  text-align: center;
+  text-shadow: 2px 5px 8px #6c5299;
+  color: #47326a;
+  margin-bottom: 10px;
+}
+
+.name-letter {
+  font-family: 'Quicksand', Helvetica, serif;
+  width: 100%;
+  font-size: 25px;
+  color: #eeeeef;
+  transition: all 1s ease-in;
+  display: none;
+
+  .typed-cursor {
+    display: none;
+  }
+}
   

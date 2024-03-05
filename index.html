@@ -11,29 +11,65 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="cake.css" />
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" type="text/css" href="loading.css">
 
 </head>
 <body>
+    <div class="loading"></div>
 
-    <div class="h-56 grid grid-cols-1 gap-4 flex justify-center">
-        <div class="oswald-app" id="app"></div>
-        <div class="oswald-app" id="que"></div>
+    <audio class="song" controls loop>
+        <source src="hbd.mp3"></source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+
+    <div class="container">
+
+
+    <div class="h-56 grid grid-cols-1 gap-4 flex justify-center" id="messagePhase1">
+        <div class="oswald-app test" id="app"></div>
+        <div class="oswald-app test" id="que"></div>
     </div>
 
+    <div class="grid grid-cols-1 message-birthday-col" id="message-col-5">
+        <div>
+            <div class="test birthday-message animate__animated animate__bounceIn animate__slow"
+                 id="birthday-message">Happy Birthday
+            </div>
+        </div>
+    </div>
+
+    <div class="cake">
+        <div class="velas">
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+        </div>
+        <div class="cobertura"></div>
+        <div class="bizcocho"></div>
+
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
 
 
-    <canvas id="confetti-canvas">
-   </canvas>
+
+        <div class="made-with-love animate__animated animate__fadeInLeft">Made with <svg class="made-by-heart" viewBox="0 0 32 29.6">
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+        </svg> by <b>Adesh</b></div>
 
 
-    <footer class="text-center mt-8">
-        Made with ❤️ by Adesh
-    </footer>
-   
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
     <script src="script.js" ></script>
     <script src="tailwind.js" ></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 </body>
 </html>
