@@ -170,4 +170,49 @@ body {
     display: none;
   }
 }
-  
+
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.glide {
+  display: none;
+}
+.slide {
+  line-height: 100px;
+  margin: 0;
+  text-align: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.glide__slides {
+  height: 400px;
+}
+
+.slide1 {
+  background-image: url("Couple.jpeg");
+}
+
+.slide2 {
+  background-image: url("Couple2.jpeg");
+}
+
+.slide3 {
+  background-image: url("Couple3.jpeg");
+}
+
+.slide4 {
+  background-image: url("Couple4.jpeg");
+}
+
+.slide5 {
+  background-image: url("Couple5.jpeg");
+}
+
+.slide6 {
+  background-image: url("Couple6.jpeg");
+}

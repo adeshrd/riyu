@@ -14,7 +14,8 @@
     <link rel="stylesheet" type="text/css" href="cake.css" />
     <link rel="stylesheet" href="animate.min.css">
     <link rel="stylesheet" type="text/css" href="loading.css">
-
+    <link rel="stylesheet" type="text/css" href="glide.core.min.css">
+    <link rel="stylesheet" type="text/css" href="glide.theme.min.css">
 </head>
 <body>
     <div class="loading"></div>
@@ -26,7 +27,19 @@
 
     <div class="container">
 
-
+        <div class="test" id="memories"></div>
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide slide slide1"></li>
+                    <li class="glide__slide slide slide2"></li>
+                    <li class="glide__slide slide slide3"></li>
+                    <li class="glide__slide slide slide4"></li>
+                    <li class="glide__slide slide slide5"></li>
+                    <li class="glide__slide slide slide6"></li>
+                </ul>
+            </div>
+        </div>
     <div class="h-56 grid grid-cols-1 gap-4 flex justify-center" id="messagePhase1">
         <div class="oswald-app test" id="app"></div>
         <div class="oswald-app test" id="que"></div>
@@ -52,7 +65,9 @@
         <div class="bizcocho"></div>
 
     </div>
-    <button style="display: none" class="btn">Someting more!</button>
+
+    <button style="display: none" class="btn" id="more" onclick="finalChapter()">Someting more!</button>
+
     <canvas id="confetti-canvas"></canvas>
 
 
@@ -70,6 +85,7 @@
     <script src="tailwind.js" ></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
 </body>
 </html>

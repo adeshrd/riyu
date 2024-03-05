@@ -12,9 +12,50 @@ window.onload = function () {
     //$('.container').fadeIn('fast', start);
 }
 
+started = false;
 
+var stringsTogether = [
+    "Our moments together...",
+    "Our love...",
+    "Our life...",
+    "Our journey...",
+    "Our memories...",
+]
+
+var finalChapter = function () {
+    glideStarted = false
+    $('.cake').hide()
+    $('#partner').hide()
+    $('#birthday-message').hide()
+
+    var instance = new TypeIt("#memories", {
+        //strings: stringsTogether,
+        speed: 200,
+        loop: true,
+        startDelete: true,
+        afterString: function () {
+            if (!glideStarted) {
+                $('.glide').fadeIn('fast');
+                glideStarted = true;
+                new Glide('.glide', {
+                    type: 'slider',
+                    autoplay: 4000,
+                }).mount()
+            }
+        }
+    })
+
+    for (const str of stringsTogether) {
+        instance.type(str).pause(200).delete(str.length);
+    }
+
+    instance.go()
+
+}
 
 var start = function () {
+    if (started) return;
+    started = true;
 
     setTimeout(() => {
 
@@ -42,40 +83,50 @@ var start = function () {
     }, 300);
 }
 
+var wished = false;
 var wishBirthday = function () {
 
+    if (wished) return;
+    wished = true;
+
+    typed = false
+
     $('#messagePhase1').fadeOut('fast', function () {
-
-
         $('body')
             .css('transition', 'background-color linear 3s')
             .css('background-color', '#a27bcc')
             .on('transitionend', function () {
-                $('#partner').show()
-                new TypeIt("#partner", {
-                    speed: 200,
-                    loop: false,
-                    afterComplete: function () {
-                        $('#partner .ti-cursor').remove()
-                        $('.cake').fadeIn('slow', function () {
-                            $('#birthday-message').show()
-                            showConfetti();
+                if (!typed) {
+                    typed = true;
+                    $('#partner').show()
+                    new TypeIt("#partner", {
+                        speed: 200,
+                        loop: false,
+                        afterComplete: function () {
                             $('audio')[0].play();
-                        });
-                    }
-                })
-                    .type("To my")
-                    .pause(100)
-                    .type(".")
-                    .pause(100)
-                    .type(".")
-                    .pause(100)
-                    .type(".")
-                    .break()
-                    .type("Precious wif")
-                    .delete(3)
-                    .type("Precious &#10084;&#65039;")
-                    .go()
+                            $('#partner .ti-cursor').remove()
+                            $('.cake').fadeIn('slow', function () {
+                                $('#birthday-message').show()
+                                showConfetti();
+                                setTimeout(() => {
+                                    $('#more').fadeIn('slow');
+                                }, 4000);
+                            });
+                        }
+                    })
+                        .type("To my")
+                        .pause(100)
+                        .type(".")
+                        .pause(100)
+                        .type(".")
+                        .pause(100)
+                        .type(".")
+                        .break()
+                        .type("Precious wif")
+                        .delete(3)
+                        .type("Precious &#10084;&#65039;")
+                        .go()
+                }
             });
     });
 
@@ -95,6 +146,5 @@ function showConfetti() {
     /*setTimeout(() => {
         confetti.clear();
     }, 5000);*/
-
 }
   
