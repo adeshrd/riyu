@@ -60,6 +60,7 @@ var wishBirthday = function () {
                         $('.cake').fadeIn('slow', function () {
                             $('#birthday-message').show()
                             showConfetti();
+                            $('audio')[0].play();
                         });
                     }
                 })
