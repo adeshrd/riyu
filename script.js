@@ -24,15 +24,16 @@ var stringsTogether = [
 
 finalChapterStarted = false;
 var finalChapter = function () {
+    $('#more').remove()
+    $('.cake').hide()
+    $('#partner').hide()
+    $('#birthday-message').hide()
+
     if (finalChapterStarted) return;
     finalChapterStarted = true;
 
     glideStarted = false
 
-    $('#more').hide()
-    $('.cake').hide()
-    $('#partner').hide()
-    $('#birthday-message').hide()
 
     var instance = new TypeIt("#memories", {
         //strings: stringsTogether,
@@ -43,6 +44,8 @@ var finalChapter = function () {
             if (!glideStarted) {
                 $('.glide').fadeIn('fast');
                 glideStarted = true;
+                $('#more').hide()
+
                 new Glide('.glide', {
                     type: 'slider',
                     autoplay: 4000,
