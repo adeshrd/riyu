@@ -2,7 +2,7 @@ window.onload = function () {
 
     $('body')
         .css('transition', 'background-color linear 3s')
-        .css('background-color', '#2d1b55')
+        .css('background-color', '#6c5299')
         .on('transitionend', function () {
             //$('#birthday-message').show().on('animationend', rest);
             $('.container').fadeIn('fast', start);
@@ -51,11 +51,30 @@ var wishBirthday = function () {
             .css('transition', 'background-color linear 3s')
             .css('background-color', '#a27bcc')
             .on('transitionend', function () {
-                //$('#birthday-message').show().on('animationend', rest);
-                $('.cake').fadeIn('slow', function () {
-                    $('#birthday-message').show()
-                    showConfetti();
-                });
+                $('#partner').show()
+                new TypeIt("#partner", {
+                    speed: 200,
+                    loop: false,
+                    afterComplete: function () {
+                        $('#partner .ti-cursor').remove()
+                        $('.cake').fadeIn('slow', function () {
+                            $('#birthday-message').show()
+                            showConfetti();
+                        });
+                    }
+                })
+                    .type("To my")
+                    .pause(100)
+                    .type(".")
+                    .pause(100)
+                    .type(".")
+                    .pause(100)
+                    .type(".")
+                    .break()
+                    .type("precious wif")
+                    .delete(3)
+                    .type("partner")
+                    .go()
             });
     });
 
