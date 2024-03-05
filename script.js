@@ -71,9 +71,9 @@ var wishBirthday = function () {
                     .pause(100)
                     .type(".")
                     .break()
-                    .type("precious wif")
+                    .type("Precious wif")
                     .delete(3)
-                    .type("partner")
+                    .type("Precious &#10084;&#65039;")
                     .go()
             });
     });
