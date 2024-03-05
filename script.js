@@ -22,9 +22,14 @@ var stringsTogether = [
     "Our memories...",
 ]
 
+finalChapterStarted = false;
 var finalChapter = function () {
+    if (finalChapterStarted) return;
+    finalChapterStarted = true;
+
     glideStarted = false
 
+    $('#more').hide()
     $('.cake').hide()
     $('#partner').hide()
     $('#birthday-message').hide()
@@ -112,7 +117,16 @@ var wishBirthday = function () {
                                 setTimeout(() => {
                                     confetti.clear();
                                     $('#confetti-canvas').hide()
-                                    $('#more').show().on('click', finalChapter)
+                                    $('.cake').fadeOut()
+                                    $('#partner').fadeOut('slow')
+                                    $('#birthday-message').fadeOut('slow')
+
+                                    $('body')
+                                        .css('transition', 'background-color linear 3s')
+                                        .css('background-color', '#6c5299')
+                                        .on('transitionend', function () {
+                                            $('#more').show().on('click', finalChapter)
+                                        });
                                 }, 4000);
                             });
                         }
